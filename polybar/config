@@ -55,7 +55,7 @@ format-offset =
 ; =======================
 
 ; Gotham theme ==========
- background = #2b303b
+ background = #090e19
  foreground = #ffffff
  alert = #d26937
  volume-min = #2aa889
@@ -90,7 +90,7 @@ override-redirect = false
 bottom = false
 fixed-center = true
 width = 100%
-height = 20
+height = 24
 ;offset-x = 1%
 ;offset-y = 1%
 
@@ -261,8 +261,8 @@ label-mode-background = #FFBB00
 label-focused = %icon% %name%
 label-focused-background = ${colors.background}
 label-focused-foreground = ${colors.foreground}
-label-focused-underline = #AD69AF
-label-focused-padding = 2
+label-focused-underline = #e6662c
+label-focused-padding = 3
 
 ; Available tokens:
 ;   %name%
@@ -307,15 +307,15 @@ format-background = ${colors.background}
 ;; grey to Blue
 type = custom/text
 content = "%{T2} %{T-}"
-content-font = 4
+content-font = 5
 content-foreground = #ff6010
-content-background = #2b303b
+content-background = #090e19
 ;
 [module/arrow2]
 ; grey to Blue
 type = custom/text
 content = "%{T2} %{T-}"
-content-font = 5
+content-font = 6
 content-foreground = #668bd7
 content-background = #ff6010
 ;
@@ -323,7 +323,7 @@ content-background = #ff6010
 ;; grey to Blue
 type = custom/text
 content = "%{T2} %{T-}"
-content-font = 6
+content-font = 7
 content-foreground = #b454ae
 content-background = #668bd7
 
@@ -331,8 +331,8 @@ content-background = #668bd7
 ;; grey to Blue
 type = custom/text
 content = "%{T2} %{T-}"
-content-font = 7
-content-foreground = #2b303b
+content-font = 6
+content-foreground = #090e19
 content-background = #b454ae
 
 ################################################################################
@@ -396,7 +396,7 @@ type = internal/cpu
 ; Seconds to sleep between updates
 ; Default: 1
 interval = 1
-format-foreground = #fefefe
+format-foreground = #ffffff
 format-background = #b454ae
 format-prefix = " "
 format-prefix-foreground = #fefefe
@@ -415,7 +415,7 @@ format = <label>
 ;   %percentage% (default) - total cpu load
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
-label = Cpu %percentage:3%%
+label = Cpu %percentage-cores:1%
 
 ################################################################################
 
@@ -432,9 +432,9 @@ time = %l:%M%p
 time-alt = %l:%M%p
 format-prefix = " "
 format-prefix-foreground = #fefefe
-format-foreground = #fefefe
-format-background = #2b303b
-label = "%date% %time% "
+format-foreground = #ffffff
+format-background = #090e19
+label = "%date% %time%"
 
 
 ################################################################################
@@ -543,8 +543,8 @@ label = %percentage_used%%
 
 format = Mem <label>
 format-prefix = " "
-format-prefix-foreground = #fefefe
-format-foreground = #fefefe
+format-prefix-foreground = #ffffff
+format-foreground = #ffffff
 format-background = #668bd7
 
 
@@ -616,7 +616,7 @@ format-foreground = ${colors.foreground}
 format-background = #ff6010
 ;format-underline = #ff6010
 label = %output%
-format-prefix = "  "
+format-prefix = " "
 format-prefix-foreground = #eaea0e
 
 ################################################################################
@@ -747,43 +747,43 @@ format-muted-background = ${colors.background}
 
 ################################################################################
 
-[module/wireless-network]
-;https://github.com/jaagr/polybar/wiki/Module:-network
-type = internal/network
-interface = ${env:WIRELESS}
-interval = 3.0
-label-connected = %essid%
-
-format-connected = <label-connected>
-;format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = ${colors.foreground}
-format-connected-background = ${colors.background}
-format-connected-prefix = "  "
-format-connected-prefix-foreground = #7e52c6
-format-connected-prefix-background = ${colors.background}
-format-connected-underline = #7e52c6
-
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.alert}
-label-disconnected-background = ${colors.background}
-
-format-disconnected = <label-disconnected>
-format-disconnected-foreground = ${colors.alert}
-format-disconnected-background = ${colors.background}
-format-disconnected-prefix = "  "
-format-disconnected-prefix-foreground = ${colors.alert}
-format-disconnected-prefix-background = ${colors.background}
-format-disconnected-underline =${colors.alert}
-
-ramp-signal-0 = ▁
-ramp-signal-1 = ▂
-ramp-signal-2 = ▃
-ramp-signal-3 = ▄
-ramp-signal-4 = ▅
-ramp-signal-5 = ▆
-ramp-signal-6 = ▇
-ramp-signal-7 = █
-ramp-signal-foreground = #7e52c6
+;[module/wireless-network]
+;;https://github.com/jaagr/polybar/wiki/Module:-network
+;type = internal/network
+;interface = ${env:WIRELESS}
+;interval = 3.0
+;label-connected = %essid%
+;
+;format-connected = <label-connected>
+;;format-connected = <ramp-signal> <label-connected>
+;format-connected-foreground = ${colors.foreground}
+;format-connected-background = ${colors.background}
+;format-connected-prefix = "  "
+;format-connected-prefix-foreground = #7e52c6
+;format-connected-prefix-background = ${colors.background}
+;format-connected-underline = #7e52c6
+;
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.alert}
+;label-disconnected-background = ${colors.background}
+;
+;format-disconnected = <label-disconnected>
+;format-disconnected-foreground = ${colors.alert}
+;format-disconnected-background = ${colors.background}
+;format-disconnected-prefix = "  "
+;format-disconnected-prefix-foreground = ${colors.alert}
+;format-disconnected-prefix-background = ${colors.background}
+;format-disconnected-underline =${colors.alert}
+;
+;ramp-signal-0 = ▁
+;ramp-signal-1 = ▂
+;ramp-signal-2 = ▃
+;ramp-signal-3 = ▄
+;ramp-signal-4 = ▅
+;ramp-signal-5 = ▆
+;ramp-signal-6 = ▇
+;ramp-signal-7 = █
+;ramp-signal-foreground = #7e52c6
 
 ################################################################################
 
@@ -820,43 +820,43 @@ format-background = ${colors.background}
 
 ################################################################################
 
-[module/xkeyboard]
-;https://github.com/jaagr/polybar/wiki/Module:-xkeyboard
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
-format-prefix-background = ${colors.background}
-format-prefix-underline = #3ecfb2
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-
-label-layout = %layout%
-label-layout-underline = #3ecfb2
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.background}
-label-indicator-underline = ${colors.foreground}
+;[module/xkeyboard]
+;;https://github.com/jaagr/polybar/wiki/Module:-xkeyboard
+;type = internal/xkeyboard
+;blacklist-0 = num lock
+;
+;format-prefix = " "
+;format-prefix-foreground = ${colors.foreground}
+;format-prefix-background = ${colors.background}
+;format-prefix-underline = #3ecfb2
+;format-foreground = ${colors.foreground}
+;format-background = ${colors.background}
+;
+;label-layout = %layout%
+;label-layout-underline = #3ecfb2
+;label-indicator-padding = 2
+;label-indicator-margin = 1
+;label-indicator-background = ${colors.background}
+;label-indicator-underline = ${colors.foreground}
 
 
 ################################################################################
 
-[module/xwindow]
-;https://github.com/jaagr/polybar/wiki/Module:-xwindow
-type = internal/xwindow
-
-; Available tokens:
-;   %title%
-; Default: %title%
-label = %title%
-label-maxlen = 50
-
-format-prefix = "  "
-format-prefix-underline = #292d3e
-format-underline = #e1acff
-format-foreground = #e1acff
-format-background = ${colors.background}
+;[module/xwindow]
+;;https://github.com/jaagr/polybar/wiki/Module:-xwindow
+;type = internal/xwindow
+;
+;; Available tokens:
+;;   %title%
+;; Default: %title%
+;label = %title%
+;label-maxlen = 50
+;
+;format-prefix = "  "
+;format-prefix-underline = #292d3e
+;format-underline = #e1acff
+;format-foreground = #e1acff
+;format-background = ${colors.background}
 
 ###############################################################################
 # vim:ft=dosini
